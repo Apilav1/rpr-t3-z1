@@ -20,4 +20,9 @@ public class FiksniBroj extends TelefonskiBroj {
     public int hashCode(){
         return 0;
     }
+
+    @Override
+    public String dajBroj(){
+        return broj;
+    }
 }
