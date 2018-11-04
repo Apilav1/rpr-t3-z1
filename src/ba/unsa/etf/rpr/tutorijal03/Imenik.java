@@ -1,9 +1,9 @@
 package ba.unsa.etf.rpr.tutorijal03;
 
-import java.util.Map;
+import java.util.*;
 
 public class Imenik {
-    Map<String, TelefonskiBroj> mapa;
+    HashMap<String, TelefonskiBroj> mapa = new HashMap<>();
     void dodaj(String ime, TelefonskiBroj broj){
         mapa.put(ime, broj);
     }
@@ -31,5 +31,28 @@ public class Imenik {
             }
         }
         return null;
+    }
+    public Set<String> izGrada(FiksniBroj.Grad g){
+            TreeSet<String> imena = new TreeSet<>();
+        for (Map.Entry<String, TelefonskiBroj>o: mapa.entrySet()) {
+            if(o.getValue() instanceof TelefonskiBroj){
+                FiksniBroj temp = (FiksniBroj) o.getValue();
+                if(temp.dajGrad().equals(g))
+                    imena.add(o.getKey());
+            }
+        }
+        return imena;
+    }
+    Set<TelefonskiBroj> izGradaBrojevi(FiksniBroj.Grad g){
+        TreeSet<TelefonskiBroj> brojevi = new TreeSet<>();
+        for (Map.Entry<String, TelefonskiBroj>o: mapa.entrySet()) {
+            if(o.getValue() instanceof TelefonskiBroj){
+                FiksniBroj temp = (FiksniBroj) o.getValue();
+                if(temp.dajGrad().equals(g)){
+                    brojevi.add(o.getValue());
+                }
+            }
+        }
+        return brojevi;
     }
 }

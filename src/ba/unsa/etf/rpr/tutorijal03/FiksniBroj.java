@@ -21,8 +21,9 @@ public class FiksniBroj extends TelefonskiBroj {
         return 0;
     }
 
-    @Override
     public String dajBroj(){
         return broj;
     }
+
+    public Grad dajGrad(){ return grad; }
 }

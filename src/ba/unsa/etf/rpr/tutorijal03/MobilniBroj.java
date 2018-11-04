@@ -16,7 +16,6 @@ public class MobilniBroj extends TelefonskiBroj {
         return 0;
     }
 
-    @Override
     public String dajBroj(){
         return broj;
     }
