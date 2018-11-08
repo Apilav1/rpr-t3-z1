@@ -5,6 +5,7 @@ import java.util.*;
 public class Imenik {
     HashMap<String, TelefonskiBroj> mapa = new HashMap<>();
     void dodaj(String ime, TelefonskiBroj broj){
+
         mapa.put(ime, broj);
     }
     String dajBroj(String ime){
